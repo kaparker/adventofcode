@@ -2,7 +2,7 @@ import pandas as pd
 
 df = pd.read_csv('day1.csv', header=None, names=['depth'])
 
-# how many increases are there comparing current and next row
+# how many increases are there comparing current and prev row
 df['is_increase'] = (df['depth'] > df['depth'].shift(1))
 print(f'''Number of increases {df['is_increase'].value_counts()[True]}''')
 
